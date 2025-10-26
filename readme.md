@@ -10,7 +10,8 @@ Cómo instalar las dependencias:
     Las dependencias se instalan al ejecutarse get_driver()
 
 Cómo ejecutar las pruebas: 
-    Antes de ejecutar el archivo con las pruebas se debe verificar que se este en la carpeta correcta -> 'tests'
+    Antes de ejecutar el archivo con las pruebas se debe verificar que se este en la carpeta correcta -> 'tests'.
+        
     Ingresar en la consola el comando:
     
     pytest -v
