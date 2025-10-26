@@ -13,4 +13,4 @@ Cómo ejecutar las pruebas:
     Antes de ejecutar el archivo con las pruebas se debe verificar que se este en la carpeta correcta -> 'tests'
 
     ingresar en la consola el comando:
-        pytest -v
+    pytest -v
