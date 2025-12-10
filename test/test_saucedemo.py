@@ -27,7 +27,7 @@ def test_catalogo (driver):
 
     products = driver.find_elements (By.CLASS_NAME, 'inventory_item')
     assert len(products) > 0
-    driver.save_screenshot('./datos/imagenes/catalogo.png')
+    driver.save_screenshot('./datos/imagenes-test/catalogo.png')
 
 def test_carrito (driver):
     login_saucedemo(driver)
@@ -41,7 +41,7 @@ def test_carrito (driver):
 
     badge = driver.find_element(By.CLASS_NAME,'shopping_cart_badge').text
     assert badge == '3'
-    driver.save_screenshot('./datos/imagenes/carrito.png')
+    driver.save_screenshot('./datos/imagenes-test/carrito.png')
 
 def test_lista_de_compra (driver):
     login_saucedemo(driver)
@@ -60,4 +60,4 @@ def test_lista_de_compra (driver):
     assert carrito_elementos[1].text == 'Sauce Labs Bike Light'
     assert carrito_elementos[2].text == 'Sauce Labs Bolt T-Shirt'
 
-    driver.save_screenshot('./datos/imagenes/lista-de-compra.png')
+    driver.save_screenshot('./datos/imagenes-test/lista-de-compra.png')

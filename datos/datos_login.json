@@ -1,0 +1,22 @@
+[
+    {
+        "username": "standard_user",
+        "password": "secret_saucedo",
+        "login_example": true
+    },
+    {
+        "username": "standard",
+        "password": "secret_saucedo",
+        "login_example": false
+    },
+    {
+        "username": "standard_user",
+        "password": "password_bad",
+        "login_example": false
+    },
+    {
+        "username": "user",
+        "password": "password",
+        "login_example": false
+    }
+]
