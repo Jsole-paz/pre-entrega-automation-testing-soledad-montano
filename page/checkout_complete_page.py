@@ -7,7 +7,7 @@ class CheckoutCompletePage:
     SUCCESS_MESSAGE = (By.CLASS_NAME, "complete-header")
     SUCCESS_TEXT = (By.CLASS_NAME, "complete-text")
     BACK_HOME_BUTTON = (By.ID, "back-to-products")
-    PONY_EXPRESS_IMAGE = (By.CLASS_NAME, "pony-express")
+    PONY_EXPRESS_IMAGE = (By.CLASS_NAME, "pony_express")
 
     def __init__(self, driver):
         self.driver = driver
@@ -28,7 +28,7 @@ class CheckoutCompletePage:
             return ""
     
     def back_to_home(self):
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 5).until(
             EC.element_to_be_clickable(self.BACK_HOME_BUTTON)
         ).click()
 

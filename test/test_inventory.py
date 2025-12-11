@@ -9,7 +9,7 @@ def test_inventory(driver):
     login.open()
     login.login("standard_user","secret_sauce")
 
-    time.sleep(10)
+    time.sleep(5)
 
     inventory.is_at_page()
  

@@ -18,7 +18,7 @@ def test_complete_purchase_flow(driver):
     time.sleep(5)
 
     inventory.add_product_to_card(0)
-    inventory.go_to_cart()
+    inventory.got_to_card()
 
     cart.go_to_checkout()
 
@@ -28,8 +28,8 @@ def test_complete_purchase_flow(driver):
     driver.get("https://www.saucedemo.com/checkout-complete.html")
 
     assert complete.is_at_page()
-    assert "Thank you for your order!" in complete.get_thank_you_message()
-    assert complete.is_success_image_displayed()
+    assert "Thank you for your order!" in complete.get_success_message()
+    assert complete.is_pony_express_image_displayed()
 
     complete.back_to_home()
     assert inventory.is_at_page()

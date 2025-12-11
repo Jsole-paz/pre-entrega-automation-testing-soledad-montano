@@ -16,7 +16,7 @@ def test_checkout_process(driver):
     time.sleep(5)
 
     inventory.add_product_to_card(0)
-    inventory.go_to_cart()
+    inventory.got_to_card()
     time.sleep(5)
     cart.go_to_checkout()
     time.sleep(5)
@@ -39,7 +39,7 @@ def test_checkout_validation(driver):
     time.sleep(5)
 
     inventory.add_product_to_card(0)
-    inventory.got_to_card()
+    inventory.get_to_card()
     cart.go_to_checkout()
 
     checkout.continue_to_overview()

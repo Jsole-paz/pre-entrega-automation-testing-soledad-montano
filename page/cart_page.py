@@ -7,7 +7,7 @@ class CartPage:
     CHECKOUT_BUTTON = (By.ID, "checkout")
     CONTINUE_SHOPPING_BUTTON = (By.ID, "continue-shopping")
     CARD_ITEM = (By.CLASS_NAME, "cart_item")
-    REMOVE_BUTTON = (By.XPATH,"remove-sauce-labs-backpack")
+    REMOVE_BUTTON = (By.XPATH,"//button[contains(@id,'remove')]")
     CARD_BADGE = (By.CLASS_NAME, "shopping_cart_badge")
 
     def __init__(self,driver):
@@ -17,21 +17,21 @@ class CartPage:
         return self.URL_CURRENT in self.driver.current_url
     
     def go_to_checkout(self):
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 5).until(
             EC.element_to_be_clickable(self.CHECKOUT_BUTTON)
         ).click()
 
     def continue_shopping(self):
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 5).until(
             EC.element_to_be_clickable(self.CONTINUE_SHOPPING_BUTTON)
         ).click()
 
     def get_cart_items_count(self):
-        items = self.driver.find_elements(self.CARD_ITEM)
+        items = self.driver.find_elements(*self.CARD_ITEM)
         return len(items)
     
     def remove_item(self, item_index=0):
-        remove_buttons= self.driver.find_elements(self.REMOVE_BUTTON)
+        remove_buttons= self.driver.find_elements(*self.REMOVE_BUTTON)
         if remove_buttons and item_index < len(remove_buttons):
             remove_buttons[item_index].click()
 

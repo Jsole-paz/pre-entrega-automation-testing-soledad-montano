@@ -17,7 +17,7 @@ class CheckoutPage:
         return "checkout-step-one.html" in self.driver.current_url
     
     def fill_customer_info(self,first_name,last_name,postal_code):
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 5).until(
             EC.visibility_of_element_located(self.FIRST_NAME_INPUT)
         ).send_keys(first_name)
 
@@ -25,12 +25,12 @@ class CheckoutPage:
         self.driver.find_element(*self.POSTAL_CODE_INPUT).send_keys(postal_code)
 
     def continue_to_overview(self):
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 5).until(
             EC.element_to_be_clickable(self.CONTINUE_BUTTON)
         ).click()
 
     def cancel_checkout(self):
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 5).until(
             EC.element_to_be_clickable(self.CANCEL_BUTTON)
         ).click()
 
